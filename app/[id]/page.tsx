@@ -2,10 +2,10 @@ import React from 'react';
 import Display from './display';
 
 interface Meme {
-    id: number;
+    id: string; // Change id to string
     name: string;
     url: string;
-    box_count: number; // Add box_count to the Meme interface
+    box_count: number; // Ensure this matches your data structure
     // Add any other properties you expect from the meme data
 }
 
@@ -17,11 +17,10 @@ interface ApiResponse {
 
 interface DetailsProps {
     params: {
-        id: number; // or string if the ID is a string
+        id: string; // Change to string to match the Meme id
     };
 }
 
-// Convert to arrow function
 const Details: React.FC<DetailsProps> = async (props) => {
     const res = await fetch("https://api.imgflip.com/get_memes");
     const result: ApiResponse = await res.json();

@@ -5,6 +5,7 @@ interface Meme {
     id: number;
     name: string;
     url: string;
+    box_count: number; // Add box_count to the Meme interface
     // Add any other properties you expect from the meme data
 }
 
